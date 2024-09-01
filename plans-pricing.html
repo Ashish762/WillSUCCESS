@@ -1,0 +1,370 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Plans & Pricing - WillSUCCESS</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #F2EBDF;
+            color: #4A4A4A;
+        }
+        header {
+            background-color: #F2EBDF;
+            padding: 15px 30px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            height: 100px;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+        .logo-container {
+            display: flex;
+            align-items: center;
+            margin-left: 20px;
+        }
+        .logo-image {
+            width: 50px;
+            height: 50px;
+            margin-right: 10px;
+            object-fit: contain;
+        }
+        .logo-text {
+            font-family: Georgia, serif;
+            font-size: 38px;
+            font-weight: bold;
+            color: #000000;
+            text-decoration: none;
+        }
+        nav ul {
+            list-style-type: none;
+            padding: 0;
+            display: flex;
+            gap: 30px;
+        }
+        nav ul li a {
+            text-decoration: none;
+            color: #4A4A4A;
+            font-family: Arial, sans-serif;
+            font-size: 18px;
+            transition: color 0.3s;
+            padding: 8px 12px;
+        }
+        nav ul li a:hover,
+        nav ul li a.active {
+            color: #A67C52;
+        }
+        nav ul li a.active {
+            background-color: #E6D9C5;
+            border: 2px solid #A67C52;
+            border-radius: 5px;
+        }
+        .main-content {
+            max-width: 1200px;
+            margin: 40px auto;
+            padding: 0 20px;
+        }
+        .main-content h1 {
+            font-family: Georgia, serif;
+            color: #4A4A4A;
+        }
+        .footer-section {
+            background-color: #F2EBDF;
+            padding: 60px 20px 0;
+            text-align: center;
+            overflow: hidden;
+        }
+        .company-info {
+            margin-bottom: 40px;
+        }
+        .company-name {
+            font-family: Georgia, serif;
+            font-size: 48px;
+            color: #4A4A4A;
+            margin-bottom: 20px;
+        }
+        .company-details {
+            display: flex;
+            justify-content: space-between;
+            max-width: 1000px;
+            margin: 0 auto;
+            font-family: Arial, sans-serif;
+            color: #4A4A4A;
+            font-size: 14px;
+        }
+        .stay-informed {
+            background-color: #E6D9C5;
+            padding: 40px 20px 60px;
+            position: relative;
+            overflow: hidden;
+            border-top-left-radius: 50% 100px;
+            border-top-right-radius: 50% 100px;
+        }
+        .stay-informed h2 {
+            font-family: Georgia, serif;
+            font-size: 36px;
+            color: #4A4A4A;
+            margin-bottom: 20px;
+        }
+        .stay-informed p {
+            font-family: Arial, sans-serif;
+            font-size: 18px;
+            color: #4A4A4A;
+            margin-bottom: 20px;
+        }
+        .stay-informed input[type="email"] {
+            width: 100%;
+            max-width: 400px;
+            padding: 10px;
+            margin-bottom: 20px;
+            border: 1px solid #A67C52;
+            background-color: transparent;
+            font-size: 16px;
+        }
+        .stay-informed button {
+            background-color: transparent;
+            border: 1px solid #A67C52;
+            color: #4A4A4A;
+            padding: 10px 20px;
+            font-size: 18px;
+            cursor: pointer;
+            transition: background-color 0.3s, color 0.3s;
+        }
+        .stay-informed button:hover {
+            background-color: #A67C52;
+            color: white;
+        }
+        footer {
+            background-color: #D9C3A9;
+            color: #4A4A4A;
+            text-align: center;
+            padding: 10px 0;
+            font-size: 14px;
+        }
+        .pricing-table {
+            display: flex;
+            justify-content: space-between;
+            gap: 20px;
+            margin-top: 40px;
+        }
+        .pricing-plan {
+            background-color: #FFFFFF;
+            border-radius: 8px;
+            padding: 20px;
+            flex: 1;
+            text-align: center;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+        }
+        .pricing-plan h2 {
+            color: #A67C52;
+        }
+        .price {
+            font-size: 36px;
+            font-weight: bold;
+            margin: 20px 0;
+        }
+        .features {
+            list-style-type: none;
+            padding: 0;
+            margin-bottom: 20px;
+        }
+        .features li {
+            margin-bottom: 10px;
+        }
+        .cta-button {
+            background-color: #A67C52;
+            color: white;
+            border: none;
+            padding: 10px 20px;
+            font-size: 18px;
+            border-radius: 5px;
+            cursor: pointer;
+            transition: background-color 0.3s;
+        }
+        .cta-button:hover {
+            background-color: #8B5E3C;
+        }
+
+        .service-section {
+            background-color: #E6D9C5;
+            padding: 60px 0;
+            margin-bottom: 40px;
+        }
+
+        .service-content {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+            text-align: center;
+        }
+
+        .service-content h2 {
+            font-family: Georgia, serif;
+            font-size: 36px;
+            color: #4A4A4A;
+            margin-bottom: 20px;
+        }
+
+        .service-features {
+            display: flex;
+            justify-content: space-around;
+            flex-wrap: wrap;
+            margin-top: 40px;
+        }
+
+        .feature {
+            flex-basis: 30%;
+            margin-bottom: 30px;
+        }
+
+        .feature-icon {
+            font-size: 48px;
+            color: #A67C52;
+            margin-bottom: 15px;
+        }
+
+        .feature h3 {
+            font-family: Georgia, serif;
+            color: #4A4A4A;
+            margin-bottom: 10px;
+        }
+
+        .pricing-section h2 {
+            text-align: center;
+            font-family: Georgia, serif;
+            font-size: 36px;
+            color: #4A4A4A;
+            margin-bottom: 20px;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <div class="logo-container">
+            <img src="images/Logo.jpg" alt="WillSUCCESS Logo" class="logo-image">
+            <a href="index.html" class="logo-text">WillSUCCESS</a>
+        </div>
+        <nav>
+            <ul>
+                <li><a href="index.html">Home</a></li>
+                <li><a href="daily-insights.html">Daily Insights</a></li>
+                <li><a href="book-reviews.html">Book Reviews</a></li>
+                <li><a href="plans-pricing.html" class="active">Plans & Pricing</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main>
+        <section class="service-section">
+            <div class="service-content">
+                <h2>Our Services</h2>
+                <p>At WillSUCCESS, we're dedicated to helping you achieve your personal and professional goals. Our comprehensive services are designed to empower you on your journey to success.</p>
+                <div class="service-features">
+                    <div class="feature">
+                        <div class="feature-icon">📚</div>
+                        <h3>Daily Insights</h3>
+                        <p>Receive daily motivational content and practical tips to keep you inspired and on track.</p>
+                    </div>
+                    <div class="feature">
+                        <div class="feature-icon">🎓</div>
+                        <h3>Expert Webinars</h3>
+                        <p>Attend exclusive webinars led by industry experts on various topics of personal development.</p>
+                    </div>
+                    <div class="feature">
+                        <div class="feature-icon">👥</div>
+                        <h3>Community Support</h3>
+                        <p>Connect with like-minded individuals in our supportive community forum.</p>
+                    </div>
+                    <div class="feature">
+                        <div class="feature-icon">📊</div>
+                        <h3>Progress Tracking</h3>
+                        <p>Use our tools to set goals, track your progress, and celebrate your achievements.</p>
+                    </div>
+                    <div class="feature">
+                        <div class="feature-icon">🏆</div>
+                        <h3>Success Coaching</h3>
+                        <p>Get personalized guidance from our experienced success coaches (available in higher-tier plans).</p>
+                    </div>
+                    <div class="feature">
+                        <div class="feature-icon">📱</div>
+                        <h3>Mobile Access</h3>
+                        <p>Access all our resources on-the-go with our mobile-friendly platform.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="pricing-section">
+            <div class="main-content">
+                <h2>Plans & Pricing</h2>
+                <p>Choose the plan that best fits your needs and start your journey to success today!</p>
+                <div class="pricing-table">
+                    <div class="pricing-plan">
+                        <h2>Basic</h2>
+                        <div class="price">$9.99/month</div>
+                        <ul class="features">
+                            <li>Daily Insights</li>
+                            <li>Weekly Newsletter</li>
+                            <li>Access to Community Forum</li>
+                        </ul>
+                        <button class="cta-button">Get Started</button>
+                    </div>
+                    <div class="pricing-plan">
+                        <h2>Pro</h2>
+                        <div class="price">$19.99/month</div>
+                        <ul class="features">
+                            <li>All Basic Features</li>
+                            <li>Exclusive Webinars</li>
+                            <li>1-on-1 Coaching Session (Monthly)</li>
+                        </ul>
+                        <button class="cta-button">Get Started</button>
+                    </div>
+                    <div class="pricing-plan">
+                        <h2>Enterprise</h2>
+                        <div class="price">Contact Us</div>
+                        <ul class="features">
+                            <li>All Pro Features</li>
+                            <li>Customized Success Plan</li>
+                            <li>Priority Support</li>
+                        </ul>
+                        <button class="cta-button">Contact Sales</button>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <section class="footer-section">
+        <div class="company-info">
+            <h2 class="company-name">WillSUCCESS</h2>
+            <div class="company-details">
+                <span>info@mysite.com</span>
+                <span>500 Terry Francine Street, 6th Floor,<br>San Francisco, CA 94158</span>
+                <span>123-456-7890</span>
+            </div>
+        </div>
+        <div class="stay-informed">
+            <h2>Stay Informed</h2>
+            <p>Enter your email here *</p>
+            <form id="subscribe-form">
+                <input type="email" id="email" name="email" required>
+                <button type="submit">Subscribe</button>
+            </form>
+        </div>
+    </section>
+    <footer>
+        <p>&copy; 2023 WillSUCCESS. All rights reserved.</p>
+    </footer>
+
+    <script>
+        document.getElementById('subscribe-form').addEventListener('submit', function(e) {
+            e.preventDefault();
+            alert('Thank you for subscribing!');
+        });
+    </script>
+</body>
+</html>

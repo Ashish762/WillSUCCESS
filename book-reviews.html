@@ -1,0 +1,295 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Book Reviews - WillSUCCESS</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #F2EBDF;
+            color: #4A4A4A;
+        }
+        header {
+            background-color: #F2EBDF;
+            padding: 15px 30px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            height: 100px;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+        .logo-container {
+            display: flex;
+            align-items: center;
+            margin-left: 20px;
+        }
+        .logo-image {
+            width: 50px;
+            height: 50px;
+            margin-right: 10px;
+            object-fit: contain;
+        }
+        .logo-text {
+            font-family: Georgia, serif;
+            font-size: 38px;
+            font-weight: bold;
+            color: #000000;
+            text-decoration: none;
+        }
+        nav ul {
+            list-style-type: none;
+            padding: 0;
+            display: flex;
+            gap: 30px;
+        }
+        nav ul li a {
+            text-decoration: none;
+            color: #4A4A4A;
+            font-family: Arial, sans-serif;
+            font-size: 18px;
+            transition: color 0.3s;
+            padding: 8px 12px;
+        }
+        nav ul li a:hover,
+        nav ul li a.active {
+            color: #A67C52;
+        }
+        nav ul li a.active {
+            background-color: #E6D9C5;
+            border: 2px solid #A67C52;
+            border-radius: 5px;
+        }
+        .main-content {
+            max-width: 1200px;
+            margin: 40px auto;
+            padding: 0 20px;
+        }
+        .main-content h1 {
+            font-family: Georgia, serif;
+            color: #4A4A4A;
+        }
+        .filter-tabs {
+            display: flex;
+            justify-content: center;
+            margin-bottom: 30px;
+        }
+        .filter-tab {
+            background-color: transparent;
+            border: 2px solid #A67C52;
+            color: #A67C52;
+            padding: 10px 20px;
+            margin: 0 5px;
+            font-size: 16px;
+            cursor: pointer;
+            transition: background-color 0.3s, color 0.3s;
+        }
+        .filter-tab:hover, .filter-tab.active {
+            background-color: #A67C52;
+            color: white;
+        }
+        .book-review {
+            background-color: #FFFFFF;
+            border-radius: 8px;
+            padding: 20px;
+            margin-bottom: 20px;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+            display: flex;
+            gap: 20px;
+        }
+        .book-cover {
+            width: 150px;
+            height: 225px;
+            object-fit: cover;
+            border-radius: 4px;
+        }
+        .book-info h2 {
+            color: #A67C52;
+            margin-top: 0;
+        }
+        .book-info p {
+            margin-bottom: 10px;
+        }
+        .rating {
+            color: #FFD700;
+            font-size: 24px;
+        }
+        .footer-section {
+            background-color: #F2EBDF;
+            padding: 60px 20px 0;
+            text-align: center;
+            overflow: hidden;
+        }
+        .company-info {
+            margin-bottom: 40px;
+        }
+        .company-name {
+            font-family: Georgia, serif;
+            font-size: 48px;
+            color: #4A4A4A;
+            margin-bottom: 20px;
+        }
+        .company-details {
+            display: flex;
+            justify-content: space-between;
+            max-width: 1000px;
+            margin: 0 auto;
+            font-family: Arial, sans-serif;
+            color: #4A4A4A;
+            font-size: 14px;
+        }
+        .stay-informed {
+            background-color: #E6D9C5;
+            padding: 40px 20px 60px;
+            position: relative;
+            overflow: hidden;
+            border-top-left-radius: 50% 100px;
+            border-top-right-radius: 50% 100px;
+        }
+        .stay-informed h2 {
+            font-family: Georgia, serif;
+            font-size: 36px;
+            color: #4A4A4A;
+            margin-bottom: 20px;
+        }
+        .stay-informed p {
+            font-family: Arial, sans-serif;
+            font-size: 18px;
+            color: #4A4A4A;
+            margin-bottom: 20px;
+        }
+        .stay-informed input[type="email"] {
+            width: 100%;
+            max-width: 400px;
+            padding: 10px;
+            margin-bottom: 20px;
+            border: 1px solid #A67C52;
+            background-color: transparent;
+            font-size: 16px;
+        }
+        .stay-informed button {
+            background-color: transparent;
+            border: 1px solid #A67C52;
+            color: #4A4A4A;
+            padding: 10px 20px;
+            font-size: 18px;
+            cursor: pointer;
+            transition: background-color 0.3s, color 0.3s;
+        }
+        .stay-informed button:hover {
+            background-color: #A67C52;
+            color: white;
+        }
+        footer {
+            background-color: #D9C3A9;
+            color: #4A4A4A;
+            text-align: center;
+            padding: 10px 0;
+            font-size: 14px;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <div class="logo-container">
+            <img src="images/Logo.jpg" alt="WillSUCCESS Logo" class="logo-image">
+            <a href="index.html" class="logo-text">WillSUCCESS</a>
+        </div>
+        <nav>
+            <ul>
+                <li><a href="index.html">Home</a></li>
+                <li><a href="daily-insights.html">Daily Insights</a></li>
+                <li><a href="book-reviews.html" class="active">Book Reviews</a></li>
+                <li><a href="plans-pricing.html">Plans & Pricing</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main class="main-content">
+        <h1>Book Reviews</h1>
+        
+        <div class="filter-tabs">
+            <button class="filter-tab active" data-category="all">All</button>
+            <button class="filter-tab" data-category="self-help">Self-Help</button>
+            <button class="filter-tab" data-category="business">Business</button>
+            <button class="filter-tab" data-category="productivity">Productivity</button>
+        </div>
+
+        <div class="book-review" data-category="self-help productivity">
+            <img src="book1-cover.jpg" alt="Book 1 Cover" class="book-cover">
+            <div class="book-info">
+                <h2>The 7 Habits of Highly Effective People</h2>
+                <p>Author: Stephen Covey</p>
+                <p>A comprehensive guide to personal and professional development.</p>
+                <div class="rating">★★★★★</div>
+            </div>
+        </div>
+
+        <div class="book-review" data-category="self-help productivity">
+            <img src="book2-cover.jpg" alt="Book 2 Cover" class="book-cover">
+            <div class="book-info">
+                <h2>Atomic Habits</h2>
+                <p>Author: James Clear</p>
+                <p>Learn how small changes can lead to remarkable results in your life.</p>
+                <div class="rating">★★★★☆</div>
+            </div>
+        </div>
+    </main>
+
+    <section class="footer-section">
+        <div class="company-info">
+            <h2 class="company-name">WillSUCCESS</h2>
+            <div class="company-details">
+                <span>info@mysite.com</span>
+                <span>500 Terry Francine Street, 6th Floor,<br>San Francisco, CA 94158</span>
+                <span>123-456-7890</span>
+            </div>
+        </div>
+        <div class="stay-informed">
+            <h2>Stay Informed</h2>
+            <p>Enter your email here *</p>
+            <form id="subscribe-form">
+                <input type="email" id="email" name="email" required>
+                <button type="submit">Subscribe</button>
+            </form>
+        </div>
+    </section>
+    <footer>
+        <p>&copy; 2023 WillSUCCESS. All rights reserved.</p>
+    </footer>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            const filterTabs = document.querySelectorAll('.filter-tab');
+            const bookReviews = document.querySelectorAll('.book-review');
+
+            filterTabs.forEach(tab => {
+                tab.addEventListener('click', () => {
+                    const category = tab.getAttribute('data-category');
+
+                    // Update active tab
+                    filterTabs.forEach(t => t.classList.remove('active'));
+                    tab.classList.add('active');
+
+                    // Filter book reviews
+                    bookReviews.forEach(review => {
+                        if (category === 'all' || review.getAttribute('data-category').includes(category)) {
+                            review.style.display = 'flex';
+                        } else {
+                            review.style.display = 'none';
+                        }
+                    });
+                });
+            });
+        });
+
+        document.getElementById('subscribe-form').addEventListener('submit', function(e) {
+            e.preventDefault();
+            alert('Thank you for subscribing!');
+        });
+    </script>
+</body>
+</html>
